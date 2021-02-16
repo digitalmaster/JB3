@@ -62,7 +62,7 @@ const Component = ({ data }) => (
       <Image fluid={data.leftImage.childImageSharp.fluid} alt="JB Logo" />
     </ImageWrapper>
     <Right>
-      <Title>Staff Software Engineer @ CircleCI</Title>
+      <Title>Senior Software Engineer @ CircleCI</Title>
       <P>
         Application Developer • Engineering Manager • Designer • Instructor •
         Writer • Formerly @Sosh (Acquired By @Postmates) • Generally an
