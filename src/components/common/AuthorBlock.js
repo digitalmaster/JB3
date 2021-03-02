@@ -64,9 +64,8 @@ const Component = ({ data }) => (
     <Right>
       <Title>Senior Software Engineer @ CircleCI</Title>
       <P>
-        Application Developer • Engineering Manager • Designer • Instructor •
-        Writer • Formerly @Sosh (Acquired By @Postmates) • Generally an
-        optimist. <br />
+        Application Developer • Team Lead • Designer • Instructor • Writer •
+        Formerly @Postmates &amp; @Sosh • Generally an optimist. <br />
         <br /> Reach me{' '}
         <a
           href="https://twitter.com/JoseBrowneX"
