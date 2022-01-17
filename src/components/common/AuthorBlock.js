@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Wrapper = styled.div`
   display: flex;
@@ -26,8 +25,6 @@ const Wrapper = styled.div`
 const ImageWrapper = styled.div`
   flex: 1;
 `;
-
-const Image = styled(Img)``;
 
 const Right = styled.div`
   padding: 2rem;
@@ -56,10 +53,14 @@ const P = styled.div`
   opacity: 0.8;
 `;
 
-const Component = ({ data }) => (
+const Component = () => (
   <Wrapper>
     <ImageWrapper>
-      <Image fluid={data.leftImage.childImageSharp.fluid} alt="JB Logo" />
+      <StaticImage
+        src="../../images/logo-circle.png"
+        alt="JB Logo"
+        width="200"
+      />
     </ImageWrapper>
     <Right>
       <Title>Senior Software Engineer @ CircleCI</Title>
@@ -83,24 +84,4 @@ Component.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-const ComponentWithQuery = props => (
-  <StaticQuery
-    query={graphql`
-      query AuthorBlock {
-        leftImage: file(relativePath: { eq: "logo-circle.png" }) {
-          childImageSharp {
-            fixed(width: 200) {
-              ...GatsbyImageSharpFixed
-            }
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `}
-    render={data => <Component data={data} {...props} />}
-  />
-);
-
-export default ComponentWithQuery;
+export default Component;

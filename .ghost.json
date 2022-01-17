@@ -1,6 +1,6 @@
 {
   "development": {
-    "apiUrl": "http://localhost:2368",
-    "contentApiKey": "cd400e5825d361d344562d871e"
+    "apiUrl": "https://jb3-ghost.herokuapp.com",
+    "contentApiKey": "d21b94b9059fd7eaca8eb05cd8"
   }
 }

@@ -54,17 +54,9 @@ module.exports = {
         name: `pages`,
       },
     },
-    // Setup for optimised images.
-    // See https://www.gatsbyjs.org/packages/gatsby-image/
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: path.join(__dirname, `src`, `images`),
-        name: `images`,
-      },
-    },
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    `gatsby-transformer-sharp`, // Needed for dynamic images
     {
       resolve: `gatsby-source-ghost`,
       options:

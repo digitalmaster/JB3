@@ -41,10 +41,7 @@ const Index = ({ data, location, pageContext }) => {
             )}
           </section>
           {showCount < posts.length && (
-            <Link
-              href="javascript:;"
-              onClick={() => increseShowCount(showCount + 5)}
-            >
+            <Link onClick={() => increseShowCount(showCount + 5)}>
               show more
             </Link>
           )}

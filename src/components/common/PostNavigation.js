@@ -8,8 +8,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { Link, StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Outer = styled.div`
   box-shadow: 0 -0.5px 0 var(--color-border);
@@ -45,15 +45,16 @@ const Title = styled.div`
   font-weight: 500;
 `;
 
-const Navigation = ({ data, nextPost, prevPost }) => (
+const Component = ({ nextPost, prevPost }) => (
   <Outer>
     <div className="container">
       <Container>
         <Left>
           {prevPost && (
             <Link to={`/${prevPost.slug}/`} className="post-navigation-links">
-              <Img
-                fixed={data.leftImage.childImageSharp.fixed}
+              <StaticImage
+                height="17"
+                src="../../images/icon-left.png"
                 alt="Previous Article"
                 className="left-icon"
               />
@@ -71,8 +72,9 @@ const Navigation = ({ data, nextPost, prevPost }) => (
                 <SubTitle>Next</SubTitle>
                 <Title>{nextPost.title}</Title>
               </div>
-              <Img
-                fixed={data.leftImage.childImageSharp.fixed}
+              <StaticImage
+                height="17"
+                src="../../images/icon-left.png"
                 alt="Next Article"
                 className="right-icon"
               />
@@ -84,27 +86,9 @@ const Navigation = ({ data, nextPost, prevPost }) => (
   </Outer>
 );
 
-Navigation.propTypes = {
+Component.propTypes = {
   nextPost: PropTypes.object,
   prevPost: PropTypes.object,
-  data: PropTypes.object.isRequired,
 };
 
-const PostNavigationQuery = props => (
-  <StaticQuery
-    query={graphql`
-      query PostNavigation {
-        leftImage: file(relativePath: { eq: "icon-left.png" }) {
-          childImageSharp {
-            fixed(width: 10) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-      }
-    `}
-    render={data => <Navigation data={data} {...props} />}
-  />
-);
-
-export default PostNavigationQuery;
+export default Component;
